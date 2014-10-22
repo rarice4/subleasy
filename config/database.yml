@@ -38,6 +38,14 @@ test:
   database: myapp_test
   pool: 5
   username: rob
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: myapp_production
+  pool: 5
+  username: rob
   password: 
 
 
