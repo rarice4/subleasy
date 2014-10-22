@@ -1,0 +1,58 @@
+
+.row  
+  .col-xs-10.col-sm-6.col-sm-offset-4.col-xs-offset-1
+    = form_for @listing, :html => { :multipart => true } do |f|
+      .input-group
+        %span.input-group-addon= f.label :address
+        = f.text_field :address, class: "form-control"
+      
+      .input-group
+        %span.input-group-addon= f.label :city
+        = f.text_field :city, class: "form-control"
+      
+      .input-group
+        %span.input-group-addon= f.label :state
+        = f.text_field :state, class: "form-control"
+      
+      .input-group
+        %span.input-group-addon= f.label :zipcode
+        = f.number_field :zipcode, class: "form-control"
+      %br
+      .input-group
+        %span.input-group-addon= f.label :rent
+        = f.number_field :rent, class: "form-control"
+        %span.input-group-addon .00
+      .input-group
+        %span.input-group-addon= f.label :rooms
+        = f.text_field :rooms, class: "form-control"
+      .input-group
+        %span.input-group-addon= f.label :photo
+        = f.file_field :photo, class: "form-control"
+      %br
+      .input-group
+        %span.input-group-addon= f.label :lease_start
+        = f.date_field :lease_start, class: "form-control"
+      .input-group
+        %span.input-group-addon= f.label :lease_length
+        = f.number_field :lease_length, class: "form-control"
+      .input-group
+        %span.input-group-addon= f.label :lease_type
+        .bkgwhite
+          Sub
+          =f.radio_button :lease_type, "sub"
+          Normal
+          =f.radio_button :lease_type, "normal"
+      %br
+      .input-group.description
+        %span.input-group-addon= f.label :description
+        = f.text_area :description, class: "form-control"
+      %br
+      .input-group
+        %span.input-group-addon= f.label :email
+        = f.email_field :email, class: "form-control"
+      .input-group
+        %span.input-group-addon= f.label :phone
+        = f.text_field :phone, class: "form-control"
+      
+      %br
+      =f.submit "Submit"

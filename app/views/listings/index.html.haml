@@ -1,0 +1,39 @@
+.row
+ 
+
+  %img.col-xs-8.col-xs-offset-3.col-sm-offset-6.sizesub_medium{:src => "/assets/subleasy.png"}
+  .col-xs-11.col-sm-8.col-md-7.col-xs-offset-1.col-sm-offset-4.col-md-offset-4
+    .panel.panel-default
+      .panel-heading
+        %i.fa.fa-bell.fa-fw Your Listings    
+      .panel-body
+        .list-group
+          %div.search_list
+          .hidetable
+            - current_user.listings.each do |f|
+              %a.list-group-item{:href => edit_listing_path(f)}
+                %i.fa.fa-comment.fa-fw
+                  .photo_display
+                    = image_tag f.photo.url, :class => "size_image_table"
+                  %div.item_display
+                    $
+                    = f.rent
+                    %br
+                    Starts:
+                    %br
+                    = f.lease_start
+                    %br
+                    Months:
+                    %br
+                    =f.lease_length
+                  %div.address_display
+                    = f.address
+                    %br
+                    = f.city
+                    , 
+                    = f.state
+                  %div.type_display
+                    = f.lease_type
+
+
+          

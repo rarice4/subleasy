@@ -1,0 +1,10 @@
+
+%a.list-group-item{:href => listing_path(a_listing)}
+  %i.fa.fa-comment.fa-fw
+    = image_tag a_listing.photo.url, :class => "size_image_table"
+    $
+    = a_listing.rent
+    = a_listing.address
+    = a_listing.city 
+    = a_listing.state
+    = a_listing.lease_type

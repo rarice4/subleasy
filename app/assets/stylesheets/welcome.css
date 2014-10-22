@@ -1,0 +1,17 @@
+.bkg {background-image: url("/assets/reef.jpg");
+background-size: 100%;
+width: 100%;
+/*border: 3px solid greenyellow;*/
+}
+.img-wel {margin-left: auto;
+margin-right: auto;
+margin-top: 59%;
+
+}
+.wel-font {color: white;
+font-size: 18px;
+}
+.wel-spacing{text-align: center;}
+.bkgcolor {background-color: mediumturquoise}
+.bkg-span {padding-bottom: 33%;}
+.fontarrow {font-style: normal;}

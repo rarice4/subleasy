@@ -1,0 +1,71 @@
+
+
+
+.row
+  / .col-xs-8.col-xs-offset-1
+  /   %img.sizesub_medium{:src => "/assets/subleasy.png"}
+
+  .col-sm-5.col-xs-10.col-xs-offset-1.col-sm-offset-4.size_show_photo.photo_margin= image_tag @listing.photo.url, :class => "size_image"
+ 
+.row  
+  .col-sm-5.col-xs-10.col-xs-offset-1.col-sm-offset-4
+    .panel.panel-info.panel_size
+      .panel-heading
+        %h3.panel-title
+          = @listing.address
+          = @listing.city
+          ,
+          = @listing.state
+          =""
+          = @listing.zipcode
+      .panel-body.bkg_panel
+        %table.list-group-item.list-group-item-success
+          %tr
+            %th.tblstyl
+              $
+              = @listing.rent
+            %th.tblstyl
+              Bedrooms:
+              = @listing.rooms
+            %th.tblstyl
+              Type:
+              = @listing.lease_type
+        %table.list-group-item.list-group-item-success
+          %tr
+            %th.tblstyl
+              Lease Start:
+              = @listing.lease_start
+            %th.tblstyl
+              Months:
+              = @listing.lease_length
+        
+          
+        %ul.list-group
+          
+          %li.list-group-item.list-group-item-info
+            Description:
+
+            %br
+            = @listing.description
+          
+         
+
+        %ul.list-group
+          %li.list-group-item.list-group-item-warning
+            Contact :
+            = @listing.email
+          %li.list-group-item.list-group-item-warning
+            Phone :
+            = @listing.phone
+          
+  .col-xs-4
+
+  - markers = "#{@listing.latitude}%2C#{@listing.longitude}&"
+
+  .col-sm-5.col-xs-10.col-xs-offset-1.col-sm-offset-4
+    .google-maps
+      %iframe{:frameborder => "0", :height => "450", :src => "https://www.google.com/maps/embed/v1/place?q=#{markers}&key=AIzaSyAQnuVfqaXy-1fiSaAYXDi2Wh39lanrHv4", :style => "border:0", :width => "600"}
+
+
+
+

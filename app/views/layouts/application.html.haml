@@ -1,0 +1,63 @@
+!!!
+%html
+  %head
+    %title FinalProject
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  %body#page-top.index.bkgcolor
+    %div.notice
+    %div.alert
+    / %div.notice= notice
+    / %div.alert= alert
+    %nav.navbar.navbar-default.navbar-fixed-top.zdex
+      .container
+        / Brand and toggle get grouped for better mobile display
+        .navbar-header.page-scroll
+          %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a#menu-toggle.navbar-brand{:href => 'javascript:void(0);', :class => 'glyphicon glyphicon-th-list'}
+          %a.navbar-brand{:href => "#page-top"} Sub-Searcher
+
+        / Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li.hidden
+              %a{:href => "#page-top"}
+            %li.page-scroll
+              %a{:href => "#about"} About
+            %li.page-scroll
+              = user_login_links
+            %li.page-scroll
+              / %a{:href => new_user_session_path} Login
+
+    :javascript
+      $(document).on('click', '#menu-toggle', function(e) {
+        console.log("Hi ")
+          e.preventDefault();
+          $("#wrapper").toggleClass("toggled");
+      });
+    #wrapper
+      / Sidebar
+      #sidebar-wrapper
+        %ul.sidebar-nav
+          %li.sidebar-brand
+            %a{:href => all_listings_path}
+              Main
+          %li
+            %a{:href => new_search_path} Advanced Search
+          %li
+            %a{:href => new_listing_path} Create Listings
+          %li
+            %a{:href => listings_path} My Listings
+          %li
+            %a{:href => "#"} Services
+          %li
+            %a{:href => "#"} Contact
+          %li
+            %img.sizesub_small{:src => "/assets/subleasynotxt.png"}
+      / /#sidebar-wrapper       
+    = yield

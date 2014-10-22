@@ -1,0 +1,14 @@
+
+#page-content-wrapper
+  .row
+    %img.col-xs-8.col-xs-offset-3.col-sm-offset-6.sizesub_medium{:src => "/assets/subleasy.png"}
+    .col-xs-11.col-sm-8.col-md-7.col-xs-offset-1.col-sm-offset-4.col-md-offset-4.search_bar
+      %div{:id => "listing_search"}
+        =form_tag all_listings_path, :method => 'get' do
+          = hidden_field_tag :direction, params[:direction]
+          = hidden_field_tag :sort, params[:sort]
+        %div
+          = text_field_tag '', '', class: "listings_search searchbar_sizing"
+          = link_to "Search", 'javascript:void(0);', class: "search_listings btn btn-sm btn-primary search_button"
+    .col-xs-3
+    %div{:id => "table_list"}= render 'listings_table'

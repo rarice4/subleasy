@@ -1,0 +1,8 @@
+
+$("div.search_list").html("")
+
+<% @listings.each do |listing| %>
+  $("div.search_list").append("<%= escape_javascript(render('all_listings/listings_partial', a_listing: listing )) %>")
+<% end %>
+$(".hidetable").hide()
+$("div.append_t").html("<%= escape_javascript(render('all_listings/sorter')) %>")
