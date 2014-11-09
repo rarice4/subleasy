@@ -35,6 +35,7 @@ gem "paperclip", "~> 4.2"
 gem "paperclip-dropbox", ">= 1.1.7"
 gem 'figaro'
 gem "geocoder"
+gem 'aws-sdk'
 
 # gem 'pg', group: :production
 # gem 'rails_12factor', group: :production
