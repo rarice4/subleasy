@@ -32,7 +32,7 @@ gem 'devise'
 gem 'geocoder'
 gem 'will_paginate', '~> 3.0'
 gem "paperclip", "~> 4.2"
-gem "paperclip-dropbox", ">= 1.1.7"
+# gem "paperclip-dropbox", ">= 1.1.7"
 gem 'figaro'
 gem "geocoder"
 gem 'aws-sdk'
