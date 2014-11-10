@@ -1,5 +1,5 @@
 class Listing < ActiveRecord::Base
-  has_attached_file :photo, :s3_protocol => :https
+  has_attached_file :photo, :s3_protocol => :https, :url => "subleasy.s3.amazonaws.com"
   #   :storage => :dropbox,
   #   :dropbox_credentials => { app_key: ENV['APP_KEY'],
   #                             app_secret: ENV['APP_SECRET'],
