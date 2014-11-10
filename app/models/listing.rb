@@ -1,5 +1,6 @@
 class Listing < ActiveRecord::Base
-  has_attached_file :photo, 
+  has_attached_file :photo,
+    :styles => { :small => "100x100>" :medium => "500x500>" }, 
     :s3_protocol => :https,
     :url =>':s3_domain_url',
     :path => '/:class/:attachment/:id_partition/:style/:filename'
