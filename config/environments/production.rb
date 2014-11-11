@@ -88,5 +88,6 @@ Rails.application.configure do
     }
   }
 
-  config.logger = Logger.new(STDOUT) 
+  config.logger = Logger.new(STDOUT)
+  config.logger.level = Logger::WARN 
 end
