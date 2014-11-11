@@ -10,7 +10,7 @@ class AllListingsController < ApplicationController
 
   def search_listings
     # @listings = Listing.order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
-    @listings = Listing.where("rent LIKE ? OR city LIKE ? OR state LIKE ? OR address LIKE ?", "%#{params[:q]}%", "%#{params[:q]}%", "%#{params[:q]}%", "%#{params[:q]}%").order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
+    @listings = Listing.where("rent LIKE ? OR city LIKE ? OR state LIKE ? OR address LIKE ?", "%(#{params[:q]}).to_i%", "%#{params[:q]}%", "%#{params[:q]}%", "%#{params[:q]}%").order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
     respond_to do |format|
       format.js
     end
